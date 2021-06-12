@@ -20,21 +20,21 @@ def app():
     y = np.array(data['cases']).reshape(-1, 1)
     plt.plot(y, '-m')
 
-    polyFeat = PolynomialFeatures(degree=6)
+    polyFeat = PolynomialFeatures(degree=5)
     x = polyFeat.fit_transform(x)
 
     model = linear_model.LinearRegression()
     model.fit(x, y)
     accuracy = model.score(x, y)
-    st.write(f'Accuracy:{round(accuracy * 100, 6)} %')
+    st.write(f'Accuracy:{round(accuracy * 100, 3)} %')
     y0 = model.predict(x)
     plt.plot(y0, '--b')
 
     # prediction
     st.write(f'Prediction - Cass after {a} days:', end='')
-    st.write(round(int(model.predict(polyFeat.fit_transform([[335 + a]]))) / 1000000, 2), 'Million Cases')
+    st.write(round(int(model.predict(polyFeat.fit_transform([[504 + a]]))) / 1000000, 2), 'Million Cases')
     st.pyplot(plt)
     st.write(f'Purple line represents original data while blue dash line is predicted data')
-    st.write(f'last updated 📅 date data: 2020-11-29')
+    st.write(f'last updated 📅 date data: June 6, 2021')
 
 
