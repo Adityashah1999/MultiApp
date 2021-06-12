@@ -19,15 +19,18 @@ def app():
     date = st.selectbox('Which date would you like to see?', date_options, 100)
     country = st.multiselect('Which country 🌎 would you like to see?', country_options, ['US', 'India', 'Italy'])
     covid = covid[covid['Country'].isin(country)]
-    covid = covid[covid['Date'] == date]
+    #covid = covid[covid['Date'] == date]
     cases_select = st.selectbox(
         label="Select the Case type",
         options=['Confirmed', 'Recovered', 'Deaths'])
 
     if cases_select == 'Confirmed':
         st.subheader("Confirmed Cases")
-        fig = px.bar(covid, x="Country", y="Confirmed", color="Country")
+        fig = px.bar(covid, x="Country", y="Confirmed", color="Country", range_y=[0,35000000])
+        fig.layout_updatemenus[0].buttons[0].args[1]['frame']['duration'] = 30
+        fig.layout.updatemenus[0].buttons[0].args[1]['transition'['duration'] = 5
         fig.update_layout(height=600, width=800)
+        
         st.write(fig)
 
         st.subheader("Date-wise Area plot")
