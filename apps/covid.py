@@ -27,7 +27,7 @@ def app():
     if cases_select == 'Confirmed':
         st.subheader("Confirmed Cases")
         fig = px.bar(covid, x="Country", y="Confirmed", color="Country", range_y=[0,35000000])
-        fig.layout_updatemenus[0].buttons[0].args[1]['frame']['duration'] = 30
+        fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 30
         fig.layout.updatemenus[0].buttons[0].args[1]['transition'['duration'] = 5
         fig.update_layout(height=600, width=800)
         
