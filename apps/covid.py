@@ -54,3 +54,5 @@ def app():
         fig3 = px.line(covid, x='Date', y="Deaths", color="Country")
         fig3.update_layout(height=600, width=800)
         st.write(fig3)
+        
+   st.write("Original Data Source [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)")     
