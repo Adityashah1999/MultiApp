@@ -55,4 +55,8 @@ def app():
         fig3.update_layout(height=600, width=800)
         st.write(fig3)
         
-        st.write("Original Data Source [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)")
+        st.markdown("""
+    **Thank you for using my application!**
+    
+    The dataset used to feed this application is provided by [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19).   
+    """)
