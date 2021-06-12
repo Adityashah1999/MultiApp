@@ -19,7 +19,7 @@ def app():
     date = st.selectbox('Which date would you like to see?', date_options, 100)
     country = st.multiselect('Which country 🌎 would you like to see?', country_options, ['US', 'India', 'Italy'])
     covid = covid[covid['Country'].isin(country)]
-    # covid = covid[covid['Date'] == date]
+    covid = covid[covid['Date'] == date]
     cases_select = st.selectbox(
         label="Select the Case type",
         options=['Confirmed', 'Recovered', 'Deaths'])
