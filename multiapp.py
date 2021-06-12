@@ -48,7 +48,7 @@ class MultiApp:
             self.apps,
             format_func=lambda app: app['title'])
         app['function']()
-        st.sidebar.write("Check out the Covid-19 [Dashboard 📊](https://datastudio.google.com/u/0/reporting/986733a0-8433-4e18-bef0-491bcdee9cc5/page/doJLC)")
+        st.sidebar.write("Check out the Covid-19 [Dashboard 📊](https://datastudio.google.com/embed/u/0/reporting/7c613f6a-74e3-48de-afb0-1ae1d9a68302/page/doJLC)")
 
 
 
