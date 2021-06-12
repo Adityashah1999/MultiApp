@@ -55,6 +55,7 @@ def app():
         fig3.update_layout(height=600, width=800)
         st.write(fig3)
         
+    st.header(f'Credits')    
     st.markdown("""
     **Thank you for using my application!**
     
