@@ -6,7 +6,7 @@ import streamlit as st
 
 def app():
     st.info('It takes a while ⏳ to fetch data. You can see the data 👇 once its loaded.')
-    st.title('Covid-19 Data Explorer')
+    st.title('Covid-19 Live Data Explorer')
     st.sidebar.image("https://media.giphy.com/media/d7ksD7AarGUDz0NmxU/giphy.gif", width=300)
     covid = pd.read_csv('https://raw.githubusercontent.com/laxmimerit/Covid-19-Preprocessed-Dataset/master/preprocessed/covid_19_data_cleaned.csv')
     covid = covid.drop(["Province/State", "Lat", "Long"], axis=1)
